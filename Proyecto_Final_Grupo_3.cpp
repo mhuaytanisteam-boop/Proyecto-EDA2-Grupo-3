@@ -94,7 +94,7 @@ public:
     }
 
     void mostrarListaAdyacencia() {
-        cout << "    LISTA DE ADYACENCIA (Conexiones de la Red)" << endl;
+        cout << "LISTA DE ADYACENCIA (Conexiones de la Red)" << endl;
 
         for (int i = 0; i < numVertices; i++) {
             cout << "  [" << i << "] " << nombresUsuarios[i] << " : ";
@@ -139,7 +139,7 @@ public:
 
         int numComunidad = 0; \
 
-        cout << "    COMUNIDADES DETECTADAS MEDIANTE DFS" << endl;
+        cout << "COMUNIDADES DETECTADAS MEDIANTE DFS" << endl;
 
         for (int i = 0; i < numVertices; i++) {
             if (!visitado[i]) {
@@ -168,8 +168,8 @@ public:
 
 
     void mostrarEstadisticas() {
-        cout << "    ESTADISTICAS DE LA RED SOCIAL" << endl;
-        cout << "  Numero total de usuarios: " << numVertices << endl;
+        cout << "ESTADISTICAS DE LA RED SOCIAL" << endl;
+        cout << "Numero total de usuarios: " << numVertices << endl;
 
         int totalAristas = 0;
         int gradoMaximo = 0;
@@ -209,9 +209,9 @@ public:
 };
 
 int main() {
-    cout << "*  ANALISIS Y DETECCION DE COMUNIDADES EN REDES    *" << endl;
-    cout << "*  SOCIALES BASADO EN RECORRIDOS DFS               *" << endl;
-    cout << "*  Proyecto Final - Estructuras de Datos            *" << endl;
+    cout << "ANALISIS Y DETECCION DE COMUNIDADES EN REDES    " << endl;
+    cout << "SOCIALES BASADO EN RECORRIDOS DFS               " << endl;
+    cout << "Proyecto Final - Estructuras de Datos           " << endl;
 
     int totalUsuarios = 8;
     Grafo redSocial(totalUsuarios);
@@ -225,14 +225,17 @@ int main() {
     redSocial.asignarNombre(6, "Elena");
     redSocial.asignarNombre(7, "Sofia");
 
-    redSocial.agregarArista(0, 1);  // Ana -- Luis
-    redSocial.agregarArista(0, 2);  // Ana -- Carlos
-    redSocial.agregarArista(1, 2);  // Luis -- Carlos
-    redSocial.agregarArista(1, 3);  // Luis -- Maria
+    //Comunidad 1
+    redSocial.agregarArista(0, 1);  // Ana --> Luis
+    redSocial.agregarArista(0, 2);  // Ana --> Carlos
+    redSocial.agregarArista(1, 2);  // Luis --> Carlos
+    redSocial.agregarArista(1, 3);  // Luis --> Maria
 
-    redSocial.agregarArista(4, 5);  // Diana -- Pedro
-    redSocial.agregarArista(4, 6);  // Diana -- Elena
+    //Comunidad 2
+    redSocial.agregarArista(4, 5);  // Diana --> Pedro
+    redSocial.agregarArista(4, 6);  // Diana --> Elena
 
+    //Comunidad 3 (Sofia) => Vacia, sin conexiones
 
     redSocial.mostrarListaAdyacencia();
 
@@ -240,7 +243,7 @@ int main() {
 
     redSocial.detectarComunidades();
 
-    cout << ">> Fin del analisis. Programa terminado correctamente.\n" << endl;
+    cout << ">> Fin del analisis\n" << endl;
 
     return 0;
 }
