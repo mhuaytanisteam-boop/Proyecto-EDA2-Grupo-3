@@ -1,0 +1,51 @@
+ANALISIS Y DETECCION DE COMUNIDADES EN REDES    
+SOCIALES BASADO EN RECORRIDOS DFS               
+
+LISTA DE ADYACENCIA (Conexiones de la Red)
+  [0] Ana : Carlos, Luis
+  [1] Luis : Maria, Carlos, Ana
+  [2] Carlos : Luis, Ana
+  [3] Maria : Luis
+  [4] Diana : Elena, Pedro
+  [5] Pedro : Diana
+  [6] Elena : Diana
+  [7] Sofia : (sin conexiones)
+
+ESTADISTICAS DE LA RED SOCIAL
+Numero total de usuarios: 8
+  Ana tiene 2 conexion(es)
+  Luis tiene 3 conexion(es)
+  Carlos tiene 2 conexion(es)
+  Maria tiene 1 conexion(es)
+  Diana tiene 2 conexion(es)
+  Pedro tiene 1 conexion(es)
+  Elena tiene 1 conexion(es)
+  Sofia tiene 0 conexion(es)
+
+  Total de conexiones (aristas): 6
+  Usuario mas conectado: Luis (3 conexiones)
+  Grado minimo: 0
+  Grado maximo: 3
+
+COMUNIDADES DETECTADAS MEDIANTE DFS
+
+  Comunidad #1 (4 miembros):
+  ---------------------------------
+    -> [0] Ana
+    -> [2] Carlos
+    -> [1] Luis
+    -> [3] Maria
+
+  Comunidad #2 (3 miembros):
+  ---------------------------------
+    -> [4] Diana
+    -> [6] Elena
+    -> [5] Pedro
+
+  Comunidad #3 (1 miembros):
+  ---------------------------------
+    -> [7] Sofia
+
+  ---------------------------------
+  Total de comunidades encontradas: 3
+>> Fin del analisis
